@@ -33,6 +33,8 @@ function addTodo(text) {
 
   saveTodos();
   renderTodos();
+
+  taskInput.value = "";
 }
 
 function saveTodos() {
@@ -106,6 +108,9 @@ function renderTodos() {
 
     todosList.appendChild(todoItem);
   });
+
+  updateItemsCount(); // ✅ add this line
+  checkEmptyState();
 }
 
 function clearCompleted() {
